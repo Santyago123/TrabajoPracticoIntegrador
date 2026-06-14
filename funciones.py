@@ -261,7 +261,7 @@ def filtrar_superficie(paises):
 def ordenar_nombre(paises):
     ordenados = sorted(
         paises,
-        key=lambda pais: pais["Nombre"]
+        key=lambda pais: pais["nombre"]
     )
 
     for pais in ordenados:
