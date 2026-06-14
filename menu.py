@@ -22,6 +22,30 @@ def main():
             case "3":
                 actualizar_pais(paises)
 
+            case "4":
+                buscar_pais(paises)
+
+            case "5":
+                filtrar_continente(paises)
+
+            case "6":
+                filtrar_poblacion(paises)
+
+            case "7":
+                filtrar_superficie(paises)
+
+            case "8":
+                ordenar_nombre(paises)
+
+            case "9":
+                ordenar_poblacion(paises)
+
+            case "10":
+                ordenar_superficie(paises)
+
+            case "11":
+                estadisticas(paises)
+
             case "0":
                 print("Programa finalizado.")
                 break
