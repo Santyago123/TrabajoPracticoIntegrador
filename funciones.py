@@ -7,6 +7,14 @@ def mostrar_menu():
     print('1. Mostrar Pais')
     print('2. Agregar Pais')
     print('3. Actualizar Pais')
+    print('4. Buscar Pais')
+    print('5. Filtrar Continente')
+    print('6. Filtrar Poblacion')
+    print('7. Filtrar Superficie')
+    print('8. Ordenar Nombre')
+    print('9. Ordenar Poblacion')
+    print('10. Ordenar Superficie')
+    print('11. Estadisticas')
     print('0. Salir')
     
 
