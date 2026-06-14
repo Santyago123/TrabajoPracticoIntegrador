@@ -308,3 +308,71 @@ def ordenar_superficie(paises):
             f"{pais['nombre']} -"
             f"{pais['superficie']}"
         )
+
+# Estadisticas 
+# Calcula y muestra indicadores generales de los paises
+def estadisticas(paises):
+    if not paises:
+        print("No hay paises cargados")
+        return
+    
+    mayor = paises[0]
+    menor = paises[0]
+
+    suma_poblacion = 0
+    suma_superficie = 0
+
+    continentes = {}
+
+    for pais in paises:
+        if pais["poblacion"] > mayor["poblacion"]:
+            mayor = pais
+
+        if pais["poblacion"] < menor["poblacion"]:
+            menor = pais
+        
+        suma_poblacion += pais["poblacion"]
+        suma_superficie += pais["superficie"]
+
+        continente = pais["continente"]
+
+        if continente in continentes:
+            continentes[continente] += 1
+        else:
+            continentes[continente] = 1
+
+    promedio_poblacion = suma_poblacion / len(paises)
+    promedio_superficie = suma_superficie / len(paises)
+
+    print("\nESTADISTICAS")
+
+    print(
+        f"Mayor poblacion: "
+        f"{mayor['nombre']} "
+        f"({mayor['poblacion']})"
+    )
+
+    print(
+        f"Menor poblacion: "
+        f"{menor['nombre']} "
+        f"({menor['poblacion']})"
+    )
+
+    print(
+        f"Promedio poblacion: "
+        f"{promedio_poblacion:.2f}"
+    )
+
+    print(
+        f"promedio superficie: "
+        f"{promedio_superficie:.2f}"
+    )
+
+    print("\nPaises por continente: ")
+
+    for continente in continentes:
+
+        print(
+            f"{continente}: "
+            f"{continentes[continente]}"
+        )
