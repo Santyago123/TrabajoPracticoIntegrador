@@ -196,3 +196,31 @@ def filtrar_continente(paises):
 
     if not encontrados:
         print("No hay resultados.")
+
+# Filtro para poblacion
+# Muestra paises dentro de un rango de poblacion
+def filtrar_poblacion(paises):
+
+    try:
+
+        minimo = int(input("Población mínima: "))
+        maximo = int(input("Población máxima: "))
+
+        encontrados = False
+
+        for pais in paises:
+
+            if minimo <= pais["poblacion"] <= maximo:
+
+                print(
+                    f"{pais['nombre']} - "
+                    f"{pais['poblacion']}"
+                )
+
+                encontrados = True
+
+        if not encontrados:
+            print("No hay resultados.")
+
+    except ValueError:
+        print("Debe ingresar números válidos.")
