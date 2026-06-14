@@ -149,6 +149,7 @@ def actualizar_pais(paises):
 # Permite buscar un pais dentro de la lista
 def buscar_pais(paises):
 
+
     if not paises:
         print("No hay países cargados.")
         return
@@ -171,3 +172,27 @@ def buscar_pais(paises):
 
     if not encontrado:
         print("No se encontraron coincidencias.")
+
+# Filtrar por Continente
+# Muestra los países pertenecientes a un continente
+def filtrar_continente(paises):
+
+    continente = input(
+        "Ingrese continente: "
+    ).strip().capitalize()
+
+    encontrados = False
+
+    for pais in paises:
+
+        if pais["continente"] == continente:
+
+            print(
+                f"{pais['nombre']} - "
+                f"{pais['poblacion']} habitantes"
+            )
+
+            encontrados = True
+
+    if not encontrados:
+        print("No hay resultados.")
