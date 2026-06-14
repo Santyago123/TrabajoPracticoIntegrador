@@ -248,8 +248,8 @@ def filtrar_superficie(paises):
     except ValueError:
         print("Debe ingresar un numero valido")
 
-#Ordenar los paises por nombres
-#Los ordena alfabeticamente
+# Ordenar los paises por nombres
+# Los ordena alfabeticamente
 def ordenar_nombre(paises):
     ordenados = sorted(
         paises,
@@ -261,4 +261,18 @@ def ordenar_nombre(paises):
         print(
             f"{pais['nombre']} -"
             f"{pais['continente']}"
+        )
+
+# Ordenar por poblacion
+# Ordenar paises segun su cantidad de habitantes
+def ordenar_poblacion(paises):
+    ordenados = sorted(
+        paises,
+        key=lambda pais: pais["poblacion"]
+    )
+    for pais in ordenados:
+
+        print(
+            f"{pais['nombre']} -"
+            f"{pais['poblacion']}"
         )
