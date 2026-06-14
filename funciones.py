@@ -276,3 +276,35 @@ def ordenar_poblacion(paises):
             f"{pais['nombre']} -"
             f"{pais['poblacion']}"
         )
+
+# Ordenar por la superficie
+# Permite ordenar segun la superficie de los paises, ascendente o descendente
+def ordenar_superficie(paises):
+
+    opcion = input(
+        "1- Ascendente\n"
+        "2- Descendente\n"
+    )
+
+    if opcion == "1":
+
+        ordenados = sorted(
+            paises,
+            key=lambda pais: pais["superficie"]
+        )
+
+    elif opcion == "2":
+        ordenados = sorted(
+            paises,
+            key=lambda pais: pais["superficie"],
+            reverse=True
+        )
+    else:
+        print("Opcion invalida")
+        return
+    for pais in ordenados:
+
+        print(
+            f"{pais['nombre']} -"
+            f"{pais['superficie']}"
+        )
