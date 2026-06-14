@@ -224,3 +224,26 @@ def filtrar_poblacion(paises):
 
     except ValueError:
         print("Debe ingresar números válidos.")
+
+# Filtro para la superficie
+# Muestra los paises siguiendo un rango de superficie
+def filtrar_superficie(paises):
+    try:
+        minimo = int(input("Superficie minima: "))
+        maximo = int(input("Superficie maxima: "))
+
+        encontrados = False
+
+        for pais in paises:
+            if minimo <= pais["superficie"] <= maximo:
+
+                print(
+                    f"{pais['nombre']} - "
+                    f"{pais['superficie']} km²"
+                )
+                encontrados = True
+
+        if not encontrados:
+            print("No hay resultados")
+    except ValueError:
+        print("Debe ingresar un numero valido")
