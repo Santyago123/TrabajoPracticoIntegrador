@@ -52,6 +52,7 @@ def cargar_paises(nombre_archivo):
 
 
 #Validaciones
+#Convierte un texto a un formato uniforme eliminando mayúsculas, espacios y tildes
 def normalizar(texto):
     texto = texto.lower().strip()
 
