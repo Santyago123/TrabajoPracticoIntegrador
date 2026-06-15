@@ -1,4 +1,6 @@
 import csv
+#Un módulo que permite trabajar caracteres con tildes, diéresis y símbolos especiales
+import unicodedata
 
 #Menu
 def mostrar_menu():
@@ -50,6 +52,16 @@ def cargar_paises(nombre_archivo):
 
 
 #Validaciones
+def normalizar(texto):
+    texto = texto.lower().strip()
+
+    texto = unicodedata.normalize("NFD", texto)
+
+    texto = "".join( c for c in texto
+        if unicodedata.category(c) != "Mn")
+
+    return texto
+
 #Solicita un texto al usuario y verifica que no esté vacío. Si el usuario no escribe nada, vuelve a pedir el dato
 def pedir_texto(mensaje):
     while True:
@@ -76,16 +88,16 @@ def pedir_entero_positivo(mensaje):
 
 #solicita al usuario que ingrese un continente y verifica que el valor corresponda a uno de los cinco continentes permitidos
 def pedir_continente():
-    continentes_validos = ["América", "Europa", "Asia", "África", "Oceanía"]
+    continentes_validos = ["america", "europa", "asia", "africa", "oceania"]
 
     while True:
-        continente = input("Continente: ").strip().capitalize()
+
+        continente = normalizar(input("Continente: "))
 
         if continente in continentes_validos:
-            return continente
+            return continente.capitalize()
 
-        print("Error: debe ingresar uno de estos continentes:")
-        print(", ".join(continentes_validos))
+        print("Continente inválido")
 
 
 #Mostrar Paises
@@ -107,7 +119,7 @@ def mostrar_paises(paises):
 #Agregar Pais
 #Permite ingresar un nuevo pais al sistema
 def agregar_pais(paises):
-    nombre = pedir_texto("Nombre: ").strip().capitalize()
+    nombre = pedir_texto("Nombre: ").strip().title()
 
     existe = any(pais["nombre"].lower() == nombre.lower() for pais in paises)
 
@@ -162,13 +174,13 @@ def buscar_pais(paises):
         print("No hay países cargados.")
         return
 
-    busqueda = input("Ingrese nombre del país: ").strip().lower()
+    busqueda = normalizar(input("Ingrese nombre del país: "))
 
     encontrado = False
 
     for pais in paises:
 
-        if busqueda in pais["nombre"].lower():
+        if busqueda in normalizar(pais["nombre"]):
 
             print("\nPaís encontrado:")
             print(f"Nombre: {pais['nombre']}")
