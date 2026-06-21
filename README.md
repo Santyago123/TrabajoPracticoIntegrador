@@ -15,7 +15,7 @@ Los datos se cargan desde un archivo CSV y se almacenan en una lista de dicciona
 - Ordenar paises por nombre.
 - Ordenar paises por población.
 - Ordenar paises por superficie.
-0. Mostrar estadisticas generales.
+- Mostrar estadisticas generales.
 
 ## Requisitos:
 Python 3.10 o superior.
