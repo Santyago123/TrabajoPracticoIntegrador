@@ -122,3 +122,8 @@ Santiago Accastello, Fernando Guevara:	Documentacion y pruebas del sistema
 - Los datos se almacenan en un archivo CSV.
 - Las validaciones evitan el ingreso de informacion incorrecta.
 - El sistema funciona completamente desde la consola.
+
+
+## Video Explicativo y Documento PDF:
+- https://youtu.be/gkuWOxEv3VU
+- https://1drv.ms/b/c/D3FA0AC68B6C8C85/IQAsijYU8-a-Qo1mQSQp44cCATeChblQfAOPFrLNzNgHJO4?e=YMt5sj
